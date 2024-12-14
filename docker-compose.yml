@@ -20,6 +20,8 @@ services:
   watsxn:
     build:
       context: ./watsxn
+    env_file:
+      - ./watsxn/.env
     ports:
       - "5000:5000"
     # depends_on:
@@ -29,8 +31,6 @@ services:
       - log:/app/log
       - storage:/app/storage
       - tmp:/app/tmp
-    environment:
-      - FLASK_ENV=development
     networks:
       - app-network
 
