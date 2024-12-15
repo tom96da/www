@@ -24,8 +24,8 @@ services:
       - ./watsxn/.env
     ports:
       - "5000:5000"
-    # depends_on:
-    #   - postgres
+    depends_on:
+      - postgres
     volumes:
       - ./watsxn:/app
       - log:/app/log
